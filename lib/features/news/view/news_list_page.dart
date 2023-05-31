@@ -12,9 +12,7 @@ class NewsListPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ニュース一覧画面'),
-      ),
+      appBar: AppBar(title: const Text("ニュース一覧")),
       body: ref.watch(newsStreamProvider).when(data: (List<News> newsList) {
         return ListView.separated(
           itemBuilder: (context, index) {

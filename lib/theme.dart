@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 final ThemeData theme = ThemeData(
   //フォームのデザイン
   navigationRailTheme: const NavigationRailThemeData(
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.white,
     useIndicator: true,
     indicatorColor: Colors.blue,
-    selectedIconTheme: IconThemeData(color: Colors.blue),
-    unselectedIconTheme: IconThemeData(color: Colors.lightBlue),
+    selectedIconTheme: IconThemeData(color: Colors.white),
+    unselectedIconTheme: IconThemeData(color: Colors.blue),
     selectedLabelTextStyle: TextStyle(color: Colors.blue),
-    unselectedLabelTextStyle: TextStyle(color: Colors.lightBlue),
+    unselectedLabelTextStyle: TextStyle(color: Colors.black),
     minExtendedWidth: 240,
   ),
   inputDecorationTheme: const InputDecorationTheme(

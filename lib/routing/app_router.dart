@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_training_admin/config/utils/enum/router_enum.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:riverpod_training_admin/features/navigation/view/bottom_navigation.dart';
-//import 'package:riverpod_training_admin/features/navigation/view/side_navigation.dart';
+//import 'package:riverpod_training_admin/features/navigation/view/bottom_navigation.dart';
+import 'package:riverpod_training_admin/features/navigation/view/side_navigation.dart';
 import 'package:riverpod_training_admin/features/news/view/add_or_edit_news_page.dart';
 import 'package:riverpod_training_admin/features/news/view/news_list_page.dart';
 
@@ -25,7 +25,7 @@ GoRouter goRouter(GoRouterRef ref) {
               (BuildContext context, GoRouterState state, Widget child) {
             return NoTransitionPage(
               key: state.pageKey,
-              child: BottomNavigation(child: child),
+              child: SideNavigation(child: child),
             );
           },
           routes: <RouteBase>[

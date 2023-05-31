@@ -59,6 +59,10 @@ class SideNavigation extends HookConsumerWidget {
                 icon: Icon(Icons.request_page),
                 label: Text("ニュース一覧"),
               ),
+              NavigationRailDestination(
+                icon: Icon(Icons.request_page),
+                label: Text("ニュース一覧"),
+              ),
             ],
           ),
           Expanded(child: child),
