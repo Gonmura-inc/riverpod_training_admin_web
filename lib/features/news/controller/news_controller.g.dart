@@ -6,21 +6,7 @@ part of 'news_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$newsStreamHash() => r'aec5ee3ce6117e0c3d23c2ff6d370fcb217f7e86';
-
-/// See also [newsStream].
-@ProviderFor(newsStream)
-final newsStreamProvider = AutoDisposeStreamProvider<List<News>>.internal(
-  newsStream,
-  name: r'newsStreamProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$newsStreamHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-typedef NewsStreamRef = AutoDisposeStreamProviderRef<List<News>>;
-String _$watchNewsHash() => r'3b1b6d2c72cec70bc8391fbbb4d8149bb61b2ee2';
+String _$newsStreamHash() => r'e75d2f452dc279cb1f64ac88e209f42baff21bc0';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -43,6 +29,88 @@ class _SystemHash {
   }
 }
 
+typedef NewsStreamRef = AutoDisposeStreamProviderRef<List<News>>;
+
+/// See also [newsStream].
+@ProviderFor(newsStream)
+const newsStreamProvider = NewsStreamFamily();
+
+/// See also [newsStream].
+class NewsStreamFamily extends Family<AsyncValue<List<News>>> {
+  /// See also [newsStream].
+  const NewsStreamFamily();
+
+  /// See also [newsStream].
+  NewsStreamProvider call(
+    bool? isSorted,
+  ) {
+    return NewsStreamProvider(
+      isSorted,
+    );
+  }
+
+  @override
+  NewsStreamProvider getProviderOverride(
+    covariant NewsStreamProvider provider,
+  ) {
+    return call(
+      provider.isSorted,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'newsStreamProvider';
+}
+
+/// See also [newsStream].
+class NewsStreamProvider extends AutoDisposeStreamProvider<List<News>> {
+  /// See also [newsStream].
+  NewsStreamProvider(
+    this.isSorted,
+  ) : super.internal(
+          (ref) => newsStream(
+            ref,
+            isSorted,
+          ),
+          from: newsStreamProvider,
+          name: r'newsStreamProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$newsStreamHash,
+          dependencies: NewsStreamFamily._dependencies,
+          allTransitiveDependencies:
+              NewsStreamFamily._allTransitiveDependencies,
+        );
+
+  final bool? isSorted;
+
+  @override
+  bool operator ==(Object other) {
+    return other is NewsStreamProvider && other.isSorted == isSorted;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, isSorted.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+String _$watchNewsHash() => r'3b1b6d2c72cec70bc8391fbbb4d8149bb61b2ee2';
 typedef WatchNewsRef = AutoDisposeStreamProviderRef<News>;
 
 /// See also [watchNews].

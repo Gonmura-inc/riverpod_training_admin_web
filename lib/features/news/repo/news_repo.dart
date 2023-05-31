@@ -21,9 +21,9 @@ class NewsRepo extends _$NewsRepo {
   }
 
   //StreamでNewsListを取得
-  Stream<List<News>> watchNewsList() {
+  Stream<List<News>> watchNewsList(bool? isSorted) {
     return state
-        .orderBy(FirebaseNewsKey.createdAt, descending: true)
+        .orderBy(FirebaseNewsKey.createdAt, descending: isSorted ?? true)
         .snapshots()
         .map(
       (QuerySnapshot<News> snapshot) {

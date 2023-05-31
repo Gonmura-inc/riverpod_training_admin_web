@@ -43,8 +43,8 @@ class NewsController extends _$NewsController {
 }
 
 @riverpod
-Stream<List<News>> newsStream(NewsStreamRef ref) {
-  return ref.read(newsRepoProvider.notifier).watchNewsList();
+Stream<List<News>> newsStream(NewsStreamRef ref, bool? isSorted) {
+  return ref.read(newsRepoProvider.notifier).watchNewsList(isSorted);
 }
 
 @riverpod

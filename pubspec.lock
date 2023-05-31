@@ -265,14 +265,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
-  data_table_2:
-    dependency: "direct main"
-    description:
-      name: data_table_2
-      sha256: ac04091abae6d24b4bee7abc5077b06eae54160d662a8d655e8e43e51537ba82
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.5.0"
   dynamic_color:
     dependency: transitive
     description:
