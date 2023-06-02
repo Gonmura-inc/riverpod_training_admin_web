@@ -10,8 +10,6 @@ class CustomDataTable extends StatelessWidget {
   final ValueChanged<int> onPageChanged;
   final DataTableSource source;
   //optional
-  final double? smRatio;
-  final double? lmRatio;
   final double? headingRowHeight;
   final double? dataRowHeight;
   final int? initialFirstRowIndex;
@@ -24,8 +22,6 @@ class CustomDataTable extends StatelessWidget {
     this.onRowsPerPageChanged,
     required this.onPageChanged,
     required this.source,
-    this.smRatio,
-    this.lmRatio,
     this.headingRowHeight,
     this.dataRowHeight,
     this.initialFirstRowIndex,
