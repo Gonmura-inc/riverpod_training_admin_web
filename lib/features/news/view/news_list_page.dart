@@ -45,6 +45,7 @@ class NewsListPage extends HookConsumerWidget {
               source: RowSourceNews(
                 count: newsList.length,
                 data: newsList,
+                context: context,
               ),
             ),
           ),
