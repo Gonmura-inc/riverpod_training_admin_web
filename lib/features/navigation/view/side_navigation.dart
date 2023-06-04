@@ -26,7 +26,7 @@ class SideNavigation extends HookConsumerWidget {
       appBar: AppBar(
         title: const Text("riverpod-training管理画面"),
         centerTitle: true,
-        actions: [],
+        actions: const [],
       ),
       body: Row(
         children: <Widget>[
